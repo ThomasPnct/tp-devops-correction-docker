@@ -23,7 +23,6 @@ jobs:
       - name: Build and test with Maven
         run: mvn clean verify
         working-directory: simple-api
-
   build:
     name: Build and analyze
     runs-on: ubuntu-latest

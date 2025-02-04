@@ -13,6 +13,8 @@ on:
 jobs:
   # define job to build and publish docker image
   build-and-push-docker-image:
+  if: github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main' # Ensure deploy only runs for main
     runs-on: ubuntu-22.04  # Specifies the environment to run the job on (Ubuntu 22.04)
       
     steps:

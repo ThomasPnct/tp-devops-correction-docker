@@ -2,7 +2,7 @@ name: Docker Hub
 
 on:
   workflow_run:
-    workflows: [SonarQube]
+    workflows: ["SonarQube"]
   push:
     branches:
       - main

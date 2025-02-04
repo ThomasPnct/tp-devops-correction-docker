@@ -3,6 +3,7 @@ name: Docker Hub
 on:
   workflow_run:
     workflows: ["SonarQube"]
+    types: [completed]
   pull_request:
     branches:
       - main

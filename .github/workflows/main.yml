@@ -2,9 +2,12 @@ name: SonarQube
 on:
   push:
     branches:
-      - main, develop
+      - main 
+      - develop 
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - develop
 jobs:
   test-backend:
     runs-on: ubuntu-22.04
@@ -23,7 +26,6 @@ jobs:
       - name: Build and test with Maven
         run: mvn clean verify
         working-directory: simple-api
-
   build:
     name: Build and analyze
     runs-on: ubuntu-latest

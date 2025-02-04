@@ -2,7 +2,6 @@ name: SonarQube
 on:
   workflow_run:
     workflows: [Backend]
-    if workflow
   push:
     branches:
       - main, develop

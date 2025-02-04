@@ -22,7 +22,7 @@ jobs:
       # Build and test your app with Maven
       - name: Build and test with Maven
         run: |
-          cd simpleapi/ 
+          cd simple-api/ 
           mvn clean install
           mvn test
  

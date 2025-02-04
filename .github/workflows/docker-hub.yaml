@@ -27,7 +27,7 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v3
         with:
-          context: ./devops/simple-api  # Directory containing the backend code
+          context: ./simple-api  # Directory containing the backend code
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-backend:latest  # Docker image tag
           push: ${{ github.ref == 'refs/heads/main' }}  # Push image only if commit is on the 'main' branch
 
@@ -35,7 +35,7 @@ jobs:
       - name: Build and push database image
         uses: docker/build-push-action@v3
         with:
-          context: ./devops/database  # Directory containing the database code
+          context: ./database  # Directory containing the database code
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-db:latest  # Docker image tag
           push: ${{ github.ref == 'refs/heads/main' }}  # Push image only if commit is on the 'main' branch
 
@@ -43,6 +43,6 @@ jobs:
       - name: Build and push http-server image
         uses: docker/build-push-action@v3
         with:
-          context: ./devops/http-server  # Directory containing the HTTP service code
+          context: ./http-server  # Directory containing the HTTP service code
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-http:latest  # Docker image tag
           push: ${{ github.ref == 'refs/heads/main' }}  # Push image only if commit is on the 'main' branch

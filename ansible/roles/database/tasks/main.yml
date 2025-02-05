@@ -1,0 +1,14 @@
+---
+- name: Launch database container
+  docker_container:
+    name: db
+    image: thomaspct/tp-devops-db:latest 
+    state: started
+    pull: yes
+    env_file: /home/admin/.env
+    networks:
+      - name: app_database_network
+    container_default_behavior: compatibility
+    networks_cli_compatible: no
+    volumes:
+      - db_data:/var/lib/postgresql/data 

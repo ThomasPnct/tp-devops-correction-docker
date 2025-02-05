@@ -4,6 +4,8 @@ services:
     build: "database"
     environment:
       - POSTGRES_PASSWORD=pwd
+      - POSTGRES_USER=usr
+      - POSTGRES_DB = db
     volumes:
       - db-volume:/var/lib/postgresql/data
     networks:

@@ -1,0 +1,12 @@
+---
+# tasks file for roles/database
+- name: Run front
+  docker_container:
+    name: front 
+    image: sylvainchu/tp-devops-front:0.0.15
+    pull: yes
+    env_file: /home/admin/.env
+    networks:
+      - name: proxy_front_network
+    container_default_behavior: compatibility
+    networks_cli_compatible: no

@@ -48,3 +48,11 @@ jobs:
           context: ./http-server  # Directory containing the HTTP service code
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-http:latest  # Docker image tag
           push: ${{ github.ref == 'refs/heads/main' }}  # Push image only if commit is on the 'main' branch
+          
+      # Build and push the HTTP Docker image
+      - name: Build and push front image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./front  # Directory containing the HTTP service code
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-front:latest  # Docker image tag
+          push: ${{ github.ref == 'refs/heads/main' }}  # Push image only if commit is on the 'main' branch

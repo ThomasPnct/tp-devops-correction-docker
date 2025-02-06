@@ -1,5 +1,5 @@
 ---
-# tasks file for network
+# tasks file for create_network
 
 - name: Create app to database network
   docker_network:
@@ -8,3 +8,7 @@
 - name: Create proxy to app network
   docker_network:
     name: proxy_app_network
+
+- name: Create proxy to front network
+  docker_network:
+    name: proxy_front_network
